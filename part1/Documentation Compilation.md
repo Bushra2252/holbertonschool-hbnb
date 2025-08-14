@@ -47,46 +47,7 @@ This documentation covers:
 ### Package Diagram Overview
 *Created by: Bushra Alotaibi*
 
-```mermaid
-graph TB
-   subgraph "🔹 Presentation Layer"
-       UI[User Interface]
-       API[REST API]
-       Services[Services]
-   end
-   
-   subgraph "🔹 Business Logic Layer"
-       Facade[Facade Pattern]
-       User[User Model]
-       Place[Place Model]
-       Review[Review Model]
-       Amenity[Amenity Model]
-   end
-   
-   subgraph "🔹 Persistence Layer"
-       DAO[Data Access Objects]
-       DB[(Database)]
-   end
-   
-   UI --> API
-   API --> Facade
-   Services --> Facade
-   
-   Facade --> User
-   Facade --> Place
-   Facade --> Review
-   Facade --> Amenity
-   
-   User --> DAO
-   Place --> DAO
-   Review --> DAO
-   Amenity --> DAO
-   
-   DAO --> DB
-   
-   style Facade fill:#e1f5fe
-   style DB fill:#f3e5f5
-```
+![Package Diagram](https://i.imgur.com/GO6aUJy.png)
 
 The HBnB application follows a layered architecture pattern with clear separation of concerns across three main layers:
 2.1 🔹 Presentation Layer
@@ -124,71 +85,8 @@ Facade Pattern Implementation: Provides a unified interface to the complex busin
 ### Class Diagram Structure
 *Created by: Najwa Aljunaidel*
 
-```mermaid
-classDiagram
-    class User {
-        +id : UUID
-        +first_name : string
-        +last_name : string
-        +email : string
-        +password : string
-        +is_admin : bool
-        +created_at : datetime
-        +updated_at : datetime
-        +register()
-        +updateProfile()
-        +delete()
-        +listPlaces()
-        +listReviews()
-    }
-    
-    class Place {
-        +id : UUID
-        +title : string
-        +description : string
-        +price : float
-        +latitude : float
-        +longitude : float
-        +created_at : datetime
-        +updated_at : datetime
-        +create()
-        +updateProfile()
-        +delete()
-        +listPlaces()
-        +listAmenities()
-    }
-    
-    class Review {
-        +id : UUID
-        +rating : float
-        +comment : string
-        +created_at : datetime
-        +updated_at : datetime
-        +create()
-        +update()
-        +delete()
-        +listPlaces()
-        +listByPlace()
-    }
-    
-    class Amenity {
-        +id : UUID
-        +name : string
-        +description : string
-        +created_at : datetime
-        +updated_at : datetime
-        +create()
-        +updateProfile()
-        +delete()
-        +listPlaces()
-        +listAmenities()
-    }
-    
-    User "1" --> "0..*" Place : owns
-    User "1" --> "0..*" Review : writes
-    Place "1" --> "0..*" Review : has
-    Place "0..*" --> "0..*" Amenity : includes
-```
+![Class digram](https://i.imgur.com/8cQuuVL.png)
+
 
 The business logic layer implements the core entities and their relationships within the HBnB system as illustrated in the UML class diagram above.
 3.1 Core Entities
