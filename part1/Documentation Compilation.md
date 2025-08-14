@@ -85,7 +85,7 @@ Facade Pattern Implementation: Provides a unified interface to the complex busin
 ### Class Diagram Structure
 *Created by: Najwa Aljunaidel*
 
-![Class digram](https://i.imgur.com/8cQuuVL.png)
+![Class digram](./Class%20Diagram.drawio.svg)
 
 
 The business logic layer implements the core entities and their relationships within the HBnB system as illustrated in the UML class diagram above.
@@ -106,8 +106,7 @@ Attributes:
 
 Methods:
 
-+register() - User registration process
-+updateProfile() - Update user information
++register() - User registration process+updateProfile() - Update user information
 +delete() - Account deletion
 +listPlaces() - List user's owned places
 +listReviews() - List user's reviews
