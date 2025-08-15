@@ -88,141 +88,17 @@ Facade Pattern Implementation: Provides a unified interface to the complex busin
 
 
 The business logic layer implements the core entities and their relationships within the HBnB system as illustrated in the UML class diagram above.
-3.1 Core Entities
-🔹 User Entity
-
-Attributes:
-
-+id: UUID - Unique identifier
-+first_name: string - User's first name
-+last_name: string - User's last name
-+email: string - User email address
-+password: string - Encrypted password
-+is_admin: bool - Administrative privileges flag
-+created_at: datetime - Account creation timestamp
-+updated_at: datetime - Last modification timestamp
 
 
-Methods:
+## 4. API Interaction Flow 
 
-+register() - User registration process+updateProfile() - Update user information
-+delete() - Account deletion
-+listPlaces() - List user's owned places
-+listReviews() - List user's reviews
+### Sequence Diagrams Overview
+*Created by: Raghad Albeladi*
 
-
-
-🔹 Place Entity
-
-Attributes:
-
-+id: UUID - Unique identifier
-+title: string - Place name/title
-+description: string - Detailed description
-+price: float - Nightly rate
-+latitude: float - Geographic coordinate
-+longitude: float - Geographic coordinate
-+owner: User - Reference to User (owner)
-+created_at: datetime - Creation timestamp
-+updated_at: datetime - Last modification timestamp
-
-
-Methods:
-
-+create() - Create new place
-+updateProfile() - Update place information
-+delete() - Remove place
-+listPlaces() - List available places
-+listAmenities() - List place amenities
-
-
-
-🔹 Review Entity
-
-Attributes:
-
-+id: UUID - Unique identifier
-+place: Place - Reference to Place
-+user: User - Reference to User (reviewer)
-+rating: float - Numeric rating (1-5)
-+comment: string - Review text
-+created_at: datetime - Review creation timestamp
-+updated_at: datetime - Last modification timestamp
-
-
-Methods:
-
-+create() - Create new review
-+update() - Update existing review
-+delete() - Remove review
-+listPlaces() - List reviewed places
-+listByPlace() - List reviews for specific place
-
-
-
-🔹 Amenity Entity
-
-Attributes:
-
-+id: UUID - Unique identifier
-+name: string - Amenity name
-+description: string - Amenity description
-+created_at: datetime - Creation timestamp
-+updated_at: datetime - Last modification timestamp
-
-
-Methods:
-
-+create() - Create new amenity
-+updateProfile() - Update amenity information
-+delete() - Remove amenity
-+listPlaces() - List places with this amenity
-+listAmenities() - List all amenities
-
-
-
-3.2 Entity Relationships
-Based on the class diagram, the relationships are:
-
-User ↔ Place:
-
-Relationship: One-to-Many (1 user can own multiple places)
-Implementation: User has listPlaces() method
-
-
-User ↔ Review:
-
-Relationship: One-to-Many (1 user can write multiple reviews)
-Implementation: User has listReviews() method
-
-
-Place ↔ Review:
-
-Relationship: One-to-Many (1 place can have multiple reviews)
-Implementation: Review references Place entity
-
-
-Place ↔ Amenity:
-
-Relationship: Many-to-Many (Places can have multiple amenities, amenities can belong to multiple places)
-Implementation: Both entities have list methods for cross-referencing
-
-
-
-3.3 Business Rules Implementation
-
-Authentication Required: User entity validates permissions for place and review operations
-Ownership Validation: Place entity ensures only owners can modify place information
-Review Restrictions: Review entity prevents users from reviewing their own places
-Data Integrity: All entities use UUID for unique identification
-Audit Trail: All entities maintain creation and update timestamps
-
-## 4. API Interaction Flow
-Sequence Diagrams Overview
-Created by: Raghad Albeladi
 The sequence diagrams illustrate the interaction flow between different components for key API operations. These diagrams show how the Presentation Layer (UI/API), Business Logic Layer (Services), and Persistence Layer (Database) communicate to handle user requests.
 
-## 1. **Sign Up / Login**
+## 4.1 **Sign Up / Login
+This diagram shows the authentication process when a user attempts to log into the system.
 ```mermaid
 sequenceDiagram
     participant U as User
@@ -248,8 +124,15 @@ sequenceDiagram
         UI-->>U: Error Message
     end
 ```
+Key Interactions:
 
-## 2. **Get Room Details**
+User submits credentials through the UI
+API validates credentials through Auth Service
+Database verification and token generation
+Success or error response to user 
+
+## 4.2  **Get Room Details Flow**
+This diagram illustrates how the system retrieves and displays detailed information about a specific place/room.
 ```mermaid
 sequenceDiagram
     participant U as USER
@@ -264,8 +147,15 @@ sequenceDiagram
     API-->>UI: Room details (JSON)
     UI-->>U: Render room details page
 ```
+Key Interactions:
 
-## 3. **Add Review**
+User requests to view room details
+API fetches room information from database
+Structured room data returned as JSON
+UI renders the detailed room information
+
+## 4.3 **Add Review Flow**
+This diagram shows the process of adding a review for a place, including authentication and authorization checks.
 ```mermaid
 sequenceDiagram
     participant U as User
@@ -295,8 +185,15 @@ sequenceDiagram
         end
     end
 ```
+Key Interactions:
 
-## 4. **Delete Place**
+User initiates review creation
+System verifies user authorization
+Review data validation through Service layer
+Database persistence with success confirmation
+
+## 4.4 **Delete Place**
+This diagram demonstrates the place deletion process with proper authorization checks.
 ```mermaid
 sequenceDiagram
     participant U as User
@@ -323,3 +220,9 @@ sequenceDiagram
         end
     end
 ```
+Key Interactions:
+
+User requests place deletion
+Authorization verification for ownership
+Database deletion operation
+Success confirmation or error handling
