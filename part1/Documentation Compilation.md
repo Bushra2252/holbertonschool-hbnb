@@ -135,7 +135,7 @@ The business logic layer implements the core entities and their relationships wi
 
 The sequence diagrams illustrate the interaction flow between different components for key API operations. These diagrams show how the Presentation Layer (UI/API), Business Logic Layer (Services), and Persistence Layer (Database) communicate to handle user requests.
 
-## 4.1 **Sign Up / Login
+## 4.1 **Sign Up / Login**
 This diagram shows the authentication process when a user attempts to log into the system.
 ```mermaid
 sequenceDiagram
