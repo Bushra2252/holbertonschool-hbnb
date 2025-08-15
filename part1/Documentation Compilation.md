@@ -7,7 +7,6 @@
 
 **Project:** HolbertonSchool HBnB  
 **Date:** August 2025  
-**Version:** 1.0  
 
 ---
 
@@ -85,6 +84,45 @@ Facade Pattern Implementation: Provides a unified interface to the complex busin
 *Created by: Najwa Aljunaidel*
 
 ![Class digram](./Class%20Diagram.drawio.svg)
+Core Entities
+🔹 User Entity
+
+Stores user information (name, email, password)
+Manages user registration and profile updates
+Tracks owned places and written reviews
+
+🔹 Place Entity
+
+Contains property details (title, description, price, location)
+Links to the owner (User) who created it
+Manages place creation, updates, and deletion
+
+🔹 Review Entity
+
+Stores user feedback for places (rating, comment)
+Links to both User (reviewer) and Place (reviewed property)
+Handles review creation, updates, and removal
+
+🔹 Amenity Entity
+
+Defines available amenities (WiFi, Pool, etc.)
+Can be associated with multiple places
+Manages amenity creation and updates
+
+Entity Relationships
+
+User → Place: One user can own multiple places
+User → Review: One user can write multiple reviews
+Place → Review: One place can have multiple reviews
+Place ↔ Amenity: Many-to-many relationship (places can have multiple amenities)
+
+Key Business Rules
+
+All entities use UUID for unique identification
+Users must be authenticated to create places/reviews
+Only place owners can modify their properties
+Users cannot review their own places
+All entities track creation and update timestamps
 
 
 The business logic layer implements the core entities and their relationships within the HBnB system as illustrated in the UML class diagram above.
@@ -226,3 +264,6 @@ User requests place deletion
 Authorization verification for ownership
 Database deletion operation
 Success confirmation or error handling
+
+## 5. Conclusion
+This technical documentation provides a comprehensive blueprint for the HBnB project implementation. The layered architecture ensures maintainability and scalability, while the detailed class relationships support robust business logic implementation.
