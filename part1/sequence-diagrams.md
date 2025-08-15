@@ -1,4 +1,3 @@
-cat > sequence-diagrams.md << 'EOF'
 # Task 2: Sequence Diagrams
 
 ## 1. **Sign Up / Login**
