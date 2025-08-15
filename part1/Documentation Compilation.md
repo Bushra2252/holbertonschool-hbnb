@@ -16,8 +16,7 @@
 2. [High-Level Architecture](#high-level-architecture)
 3. [Business Logic Layer](#business-logic-layer)
 4. [API Interaction Flow](#api-interaction-flow)
-5. [Design Decisions and Rationale](#design-decisions-and-rationale)
-6. [Conclusion](#conclusion)
+5. [Conclusion](#conclusion)
 
 ---
 
