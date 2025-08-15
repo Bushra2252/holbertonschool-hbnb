@@ -218,19 +218,20 @@ Review Restrictions: Review entity prevents users from reviewing their own place
 Data Integrity: All entities use UUID for unique identification
 Audit Trail: All entities maintain creation and update timestamps
 
-4. API Interaction Flow
+## 4. API Interaction Flow
 Sequence Diagrams Overview
 Created by: Raghad Albeladi
 The sequence diagrams illustrate the interaction flow between different components for key API operations. These diagrams show how the Presentation Layer (UI/API), Business Logic Layer (Services), and Persistence Layer (Database) communicate to handle user requests.
-4.1 🔹 Sign Up / Login Flow
-This diagram shows the authentication process when a user attempts to log into the system.
-```
+
+## 1. **Sign Up / Login**
+```mermaid
 sequenceDiagram
     participant U as User
     participant UI as UI
     participant API as Controller/API
     participant Auth as Auth Service
     participant DB as Database
+
     U->>UI: Enter credentials
     UI->>API: POST /auth/login
     API->>Auth: IsUserAuthorized(userID, password)
@@ -247,21 +248,16 @@ sequenceDiagram
         API-->>UI: 401 Unauthorized
         UI-->>U: Error Message
     end
-   ```
-Key Interactions:
+```
 
-User submits credentials through the UI
-API validates credentials through Auth Service
-Database verification and token generation
-Success or error response to user
-
-4.2 🔹 Get Room Details Flow
-This diagram illustrates how the system retrieves and displays detailed information about a specific place/room.
-  ```sequenceDiagram
+## 2. **Get Room Details**
+```mermaid
+sequenceDiagram
     participant U as USER
     participant UI as UI
     participant API as Backend/API
     participant DB as Database/Service
+
     U->>UI: click view room details
     UI->>API: GET /api/rooms/{roomId}
     API->>DB: GetRoomDetails(ID)
@@ -269,16 +265,9 @@ This diagram illustrates how the system retrieves and displays detailed informat
     API-->>UI: Room details (JSON)
     UI-->>U: Render room details page
 ```
-Key Interactions:
 
-User requests to view room details
-API fetches room information from database
-Structured room data returned as JSON
-UI renders the detailed room information
-
-4.3 🔹 Add Review Flow
-This diagram shows the process of adding a review for a place, including authentication and authorization checks.
-```
+## 3. **Add Review**
+```mermaid
 sequenceDiagram
     participant U as User
     participant UI as UI
@@ -286,6 +275,7 @@ sequenceDiagram
     participant Auth as Auth Service
     participant Service as Model/Services
     participant DB as DB
+
     U->>UI: Click Add Review button
     UI->>API: call post:/api/rooms/{id}/review
     
@@ -306,23 +296,16 @@ sequenceDiagram
         end
     end
 ```
-Key Interactions:
 
-User initiates review creation
-System verifies user authorization
-Review data validation through Service layer
-Database persistence with success confirmation
-
-4.4 🔹 Delete Place Flow
-This diagram demonstrates the place deletion process with proper authorization checks.
-
-```
+## 4. **Delete Place**
+```mermaid
 sequenceDiagram
     participant U as User
     participant UI as UI
     participant API as Backend/API
     participant Auth as Auth Service
     participant DB as DB/Services
+
     U->>UI: Click delete button
     UI->>API: call post:/api/room/{id}/delete
     
@@ -341,86 +324,3 @@ sequenceDiagram
         end
     end
 ```
-
-Key Interactions:
-
-User requests place deletion
-Authorization verification for ownership
-Database deletion operation
-Success confirmation or error handling
-
-API Design Principles
-Based on the sequence diagrams, the system follows these key principles:
-
-RESTful Architecture: Standard HTTP methods (GET, POST) and appropriate status codes
-Authentication & Authorization: Comprehensive security checks for protected operations
-Layered Communication: Clear separation between UI, API, Services, and Database layers
-Error Handling: Proper error responses (401 Unauthorized, 403 Forbidden, 204 OK)
-Data Validation: Service layer validates data before database operations
-Consistent Response Format: Uniform JSON structure and HTTP status codes
-
-
-5. Design Decisions and Rationale
-5.1 Architectural Patterns
-Layered Architecture
-Decision: Implement three-tier architecture
-Rationale:
-
-Clear separation of concerns
-Enhanced maintainability
-Improved testability
-Scalability benefits
-
-Facade Pattern
-Decision: Use facade pattern for business logic layer
-Rationale:
-
-Simplified interface for complex subsystems
-Reduced coupling between layers
-Easier to modify internal implementations
-Improved code organization
-
-5.2 Database Design
-Relational Database Choice
-Decision: Use SQL database for primary storage
-Rationale:
-
-ACID compliance for data integrity
-Complex relationship support
-Mature ecosystem and tools
-Strong consistency requirements
-
-Normalization Strategy
-Decision: Third Normal Form (3NF) normalization
-Rationale:
-
-Eliminates data redundancy
-Maintains data integrity
-Optimizes storage space
-Supports complex queries
-
-5.3 API Design
-RESTful API Design
-Decision: Implement REST architectural style
-Rationale:
-
-Industry standard approach
-Stateless and scalable
-Clear resource-based URLs
-Standard HTTP methods
-
-JSON Data Format
-Decision: Use JSON for data exchange
-Rationale:
-
-Lightweight and human-readable
-Wide language support
-Native JavaScript integration
-Standard web format
-
-
-6. Conclusion
-This technical documentation provides a comprehensive blueprint for the HBnB project implementation. The layered architecture ensures maintainability and scalability, while the detailed class relationships support robust business logic implementation.
-
-
-شع
