@@ -3,7 +3,7 @@
 A clean, well‑structured **Flask REST API** for the Holberton Bed‑and‑Breakfast (HBnB) platform. Manage **users, amenities, places, reviews** via versioned endpoints.
 
 <p align="center">
-  <img alt="HBnB API Status Codes" src="https://tse4.mm.bing.net/th/id/OIP.adrfxjJ-_QUwG6RT5dzvpwHaCZ?pid=Api" width="600"/>
+  <img alt="HBnB API Status Codes" src="https://tse4.mm.bing.net/th/id/OIP.adrfxjJ-_QUwG6RT5dzvpwHaCZ?pid=Api" width="800"/>
 </p>
 
 
