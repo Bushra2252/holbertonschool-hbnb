@@ -2,12 +2,7 @@
 
 <div align="center">
 
-![Holberton School](https://img.shields.io/badge/Holberton-School-red?style=for-the-badge&logo=holberton&logoColor=white)  
-![Python](https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python&logoColor=white)  
-![Flask](https://img.shields.io/badge/Flask-RESTful-green?style=for-the-badge&logo=flask&logoColor=white)  
-![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-ORM-orange?style=for-the-badge&logo=postgresql&logoColor=white)  
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?style=for-the-badge&logo=javascript&logoColor=black)  
-![HTML5](https://img.shields.io/badge/HTML5-Frontend-purple?style=for-the-badge&logo=html5&logoColor=white)  
+![Holberton School](https://img.shields.io/badge/Holberton-School-red?style=for-the-badge&logo=holberton&logoColor=white)  ![Python](https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python&logoColor=white)  ![Flask](https://img.shields.io/badge/Flask-RESTful-green?style=for-the-badge&logo=flask&logoColor=white)  ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-ORM-orange?style=for-the-badge&logo=postgresql&logoColor=white)  ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?style=for-the-badge&logo=javascript&logoColor=black)  ![HTML5](https://img.shields.io/badge/HTML5-Frontend-purple?style=for-the-badge&logo=html5&logoColor=white)  
 ![CSS3](https://img.shields.io/badge/CSS3-Responsive-pink?style=for-the-badge&logo=css3&logoColor=white)  
 
 **A complete full-stack AirBnB clone with RESTful API, database integration, and interactive frontend**
