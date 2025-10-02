@@ -141,6 +141,122 @@ python3 -m http.server 8080
 ```
 Frontend runs on http://127.0.0.1:8080
 
+# Quick Start Guide
+
+1. Run the backend API  
+2. Open Swagger docs at `http://127.0.0.1:5000/doc/`  
+3. Start the frontend server  
+4. Access frontend in browser  
+
+---
+
+# API Endpoints
+
+## Users
+- `POST /api/v1/users/` – Create new user  
+- `GET /api/v1/users/` – List all users  
+- `GET /api/v1/users/<id>` – Get specific user  
+- `PUT /api/v1/users/<id>` – Update user  
+
+## Places
+- `POST /api/v1/places/` – Create new place  
+- `GET /api/v1/places/` – List all places  
+- `GET /api/v1/places/<id>` – Get specific place  
+- `PUT /api/v1/places/<id>` – Update place  
+
+## Reviews
+- `POST /api/v1/reviews/` – Create review  
+- `GET /api/v1/reviews/` – List all reviews  
+- `GET /api/v1/reviews/<id>` – Get review  
+- `PUT /api/v1/reviews/<id>` – Update review  
+
+## Amenities
+- `POST /api/v1/amenities/` – Create amenity  
+- `GET /api/v1/amenities/` – List amenities  
+- `GET /api/v1/amenities/<id>` – Get amenity  
+- `PUT /api/v1/amenities/<id>` – Update amenity  
+
+---
+
+# Model Validation Rules
+
+- **Users**: First/last name required, email unique, password secure  
+- **Places**: Title required, price positive, valid coordinates  
+- **Reviews**: Text length 10–500, rating 1–5  
+- **Amenities**: Name required, unique  
+
+---
+
+# Testing Documentation
+
+- Backend tests with pytest (`pytest tests/ -v`)  
+- Frontend tests with Jest (`npm test`)  
+- Coverage reports included  
+
+---
+
+# Performance & Optimization
+
+- Database indexing for faster queries  
+- Connection pooling  
+- Browser caching for frontend assets  
+- API response time < 200ms  
+
+---
+
+# Security Features
+
+- Password hashing (bcrypt)  
+- Input sanitization  
+- CSRF and SQL injection protection  
+- HTTPS recommended in production  
+
+---
+
+# API Documentation
+
+- Swagger UI available at `/doc/`  
+- OpenAPI specification included  
+- Postman collection for testing  
+
+---
+
+# Frontend Features
+
+- Landing page with featured places  
+- Search/filter by location, price, and amenities  
+- Booking calendar  
+- Responsive layout (mobile-first)  
+
+---
+
+# Deployment Guide
+
+- Dockerfile and docker-compose provided  
+- Supports Heroku, AWS, DigitalOcean, Vercel  
+
+---
+
+# Contributing
+
+- Fork repo, create feature branch, open PR  
+- Follow PEP8 (Python), ES6 (JS), semantic HTML/CSS  
+- Add tests and update docs with new features  
+
+---
+
+# License
+
+MIT License – Educational use for Holberton School curriculum.  
+
+---
+
+# Authors
+
+- **Raghad Albeladi & Najwa Aljunaidell** – Holberton School Software Engineering Program  
+- GitHub Repo: [holbertonschool-hbnb](https://github.com/Bushra2252/holbertonschool-hbnb)  
+
+
 
 
 
