@@ -78,13 +78,104 @@
 ---
 
 ## Project Structure
-```bash
 holbertonschool-hbnb/
-├── part2/         # API Backend
-├── part3/         # Database Models
-├── part4/         # Frontend
-└── uml/           # UML Diagrams
-```
+├──  README.md                     # Project documentation
+├──  .gitignore                    # Git ignore patterns
+│
+├──  part2/                        #  API Backend Implementation
+│   ├──  README.md                 # Backend documentation
+│   ├──  run.py                    # Application entry point
+│   ├──  config.py                 # Configuration settings
+│   ├──  requirements.txt          # Python dependencies
+│   │
+│   ├──  app/                      # Main application package
+│   │   ├──  __init__.py           # App factory and configuration
+│   │   │
+│   │   ├──  api/                  # API endpoint definitions
+│   │   │   └──  v1/               # API version 1
+│   │   │       ├──  amenities.py  # Amenities CRUD endpoints
+│   │   │       ├──  places.py     # Places CRUD endpoints
+│   │   │       ├──  reviews.py    # Reviews CRUD endpoints
+│   │   │       └──  users.py      # Users CRUD endpoints
+│   │   │
+│   │   ├──  models/               # Data model definitions
+│   │   │   ├──  base_model.py     # Base model with common fields
+│   │   │   ├──  amenity.py        # Amenity model
+│   │   │   ├──  place.py          # Place model with location data
+│   │   │   ├──  review.py         # Review model with ratings
+│   │   │   └──  user.py           # User model with authentication
+│   │   │
+│   │   ├──  persistence/          # Data storage layer
+│   │   │   └──  repository.py     # Repository pattern implementation
+│   │   │
+│   │   └──  services/             # Business logic layer
+│   │       ├──  facade.py         # Service facade pattern
+│   │       └──  test.py           # Service testing utilities
+│   │
+│   └── tests/                     # Comprehensive test suite
+│       ├──  test_api.py           # API endpoint tests
+│       ├──  test_models.py        # Model validation tests
+│       └──  test_services.py      # Business logic tests
+│
+├── part3/                        #  Database Implementation
+│   ├── hbnb/                     # Main application package
+│   │   ├──  __init__.py          # Package initialization
+│   │   │
+│   │   ├──  models/               # SQLAlchemy ORM models
+│   │   │   ├──  base.py           # Base model with SQLAlchemy
+│   │   │   ├──  amenity.py        # Amenity ORM model
+│   │   │   ├──  place.py          # Place ORM with relationships
+│   │   │   ├──  review.py         # Review ORM with foreign keys
+│   │   │   └──  user.py           # User ORM with constraints
+│   │   │
+│   │   ├──  routes/               # Flask route definitions
+│   │   │   ├──  amenities.py      # Amenity routes
+│   │   │   ├──  places.py         # Place routes
+│   │   │   ├──  reviews.py        # Review routes
+│   │   │   └──  users.py          # User routes
+│   │   │
+│   │   └──  templates/            # Jinja2 templates
+│   │       ├──  base.html         # Base template
+│   │       ├──  index.html        # Home page template
+│   │       └──  place.html        # Place detail template
+│   │
+│   ├──  instance/                 # Instance-specific configurations
+│   │   ├──  config.py             # Local configuration
+│   │   └──  database.db           # SQLite database file
+│   │
+│   └──  venv/                     # Virtual environment
+│
+├──  part4/                        #  Frontend Implementation
+│   ├──  index.html                #  Main landing page
+│   ├──  login.html                #  User authentication page
+│   ├──  place.html                #  Place details page
+│   ├──  scripts.js                #  Main JavaScript functionality
+│   ├──  styles.css                #  CSS styles and responsive design
+│   │
+│   ├──  js/                       # JavaScript modules
+│   │   ├──  api.js                # API communication module
+│   │   ├──  auth.js               # Authentication handling
+│   │   ├──  search.js             # Search and filter functionality
+│   │   └──  booking.js            # Booking system logic
+│   │
+│   ├──  img/                      # Image assets
+│   │   ├──  logo.png              # Application logo
+│   │   ├──  placeholder.jpg       # Image placeholders
+│   │   └──  icons/                # UI icons and graphics
+│   │
+│   └──  tests/                    # Frontend testing
+│       ├──  test_ui.js            # UI component tests
+│       ├──  test_api.js           # API integration tests
+│       └──  test_auth.js          # Authentication flow tests
+│
+└──  uml/                          #  UML Diagrams & Documentation
+    ├──  hbnb-technical-doc.md     # Technical architecture documentation
+    ├──  class_diagram.png         # Entity relationship diagram
+    ├──  package_diagram.png       # Component architecture
+    ├──  sequence_diagram_getplace.png      # GET place API flow
+    ├──  sequence_diagram_postplace.png     # POST place API flow
+    ├──  sequence_diagram_review.png        # Review creation flow
+    └──  sequence_diagram_start.png         # Application startup flow
 # Technology Stack
 
 **Backend**: Python, Flask, Flask-RESTX  
