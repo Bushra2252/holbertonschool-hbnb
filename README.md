@@ -239,11 +239,59 @@ holbertonschool-hbnb/
 ---
 
 # Project Phases
-
-- **Part 2**: API backend with Flask-RESTX  
-- **Part 3**: Database models with SQLAlchemy  
-- **Part 4**: Frontend implementation (HTML, CSS, JS)  
-
+```bash
+holbertonschool-hbnb/
+├── part2/                   # API Backend
+│   ├── app/
+│   │   ├── __init__.py      # App initialization and configuration
+│   │   ├── api/
+│   │   │   └── v1/          # API endpoints 
+│   │   │       ├── amenities.py
+│   │   │       ├── places.py
+│   │   │       ├── reviews.py
+│   │   │       └── users.py
+│   │   ├── models/          # Data models
+│   │   │   ├── amenity.py
+│   │   │   ├── base_model.py
+│   │   │   ├── place.py
+│   │   │   ├── review.py
+│   │   │   └── user.py
+│   │   ├── persistence/     # Data storage
+│   │   │   └── repository.py
+│   │   └── services/        # Business logic
+│   │       ├── facade.py
+│   │       └── test.py
+│   ├── config.py            # Configuration settings
+│   ├── run.py               # Application entry point
+│   ├── requirements.txt     # Project dependencies
+│   └── tests/               # API test suite
+│
+├── part3/                   # Database Models
+│   ├── hbnb/                # Main application package
+│   │   ├── __init__.py
+│   │   ├── models/          # SQLAlchemy ORM models
+│   │   │   ├── amenity.py
+│   │   │   ├── base.py
+│   │   │   ├── place.py
+│   │   │   ├── review.py
+│   │   │   └── user.py
+│   │   ├── routes/          # API routes
+│   │   └── templates/       # Flask templates
+│   ├── instance/            # Instance-specific configs
+│   └── venv/                # Virtual environment
+│
+├── part4/                   # Frontend Implementation
+│   ├── img/                 # Image assets
+│   ├── js/                  # JavaScript modules
+│   ├── tests/               # Frontend tests
+│   ├── index.html           # Main landing page
+│   ├── login.html           # User authentication page
+│   ├── place.html           # Place details page
+│   ├── scripts.js           # Main JavaScript file
+│   └── styles.css           # CSS styles
+│
+└── uml/                     # UML diagrams
+```
 ---
 
 # Installation & Setup
