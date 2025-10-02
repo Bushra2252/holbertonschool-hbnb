@@ -181,12 +181,60 @@ holbertonschool-hbnb/
 
     
 # Technology Stack
+<table>
+<tr>
+<td align="center">
 
-**Backend**: Python, Flask, Flask-RESTX  
-**Database**: SQLAlchemy, PostgreSQL (prod), SQLite (dev), Alembic  
-**Frontend**: HTML5, CSS3, JavaScript (ES6)  
-**Testing**: pytest, Jest  
-**Tools**: Git, Postman, VSCode, Docker  
+**Backend Technologies**
+![Python](https://img.shields.io/badge/Python-3.8+-blue?style=flat&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-3.1.0-green?style=flat&logo=flask&logoColor=white)
+![Flask-RESTX](https://img.shields.io/badge/Flask--RESTX-1.3.0-lightgreen?style=flat&logo=swagger&logoColor=white)
+
+</td>
+<td align="center">
+
+**Database Technologies**
+![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-ORM-orange?style=flat&logo=postgresql&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Production-blue?style=flat&logo=postgresql&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-Development-lightblue?style=flat&logo=sqlite&logoColor=white)
+
+</td>
+<td align="center">
+
+**Frontend Technologies**
+![HTML5](https://img.shields.io/badge/HTML5-Semantic-red?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-Grid/Flexbox-blue?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?style=flat&logo=javascript&logoColor=black)
+
+</td>
+</tr>
+<tr>
+<td align="center">
+
+**Testing & Quality**
+![pytest](https://img.shields.io/badge/pytest-Testing-green?style=flat&logo=pytest&logoColor=white)
+![Coverage](https://img.shields.io/badge/Coverage-7.6+-blue?style=flat&logo=codecov&logoColor=white)
+![Jest](https://img.shields.io/badge/Jest-Frontend-red?style=flat&logo=jest&logoColor=white)
+
+</td>
+<td align="center">
+
+**Development Tools**
+![Git](https://img.shields.io/badge/Git-Version_Control-orange?style=flat&logo=git&logoColor=white)
+![VSCode](https://img.shields.io/badge/VSCode-IDE-blue?style=flat&logo=visualstudiocode&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-API_Testing-orange?style=flat&logo=postman&logoColor=white)
+
+</td>
+<td align="center">
+
+**Architecture Patterns**
+![REST](https://img.shields.io/badge/REST-API_Design-green?style=flat&logo=rest&logoColor=white)
+![MVC](https://img.shields.io/badge/MVC-Architecture-purple?style=flat&logo=mvc&logoColor=white)
+![Repository](https://img.shields.io/badge/Repository-Pattern-blue?style=flat&logo=repository&logoColor=white)
+
+</td>
+</tr>
+</table>
 
 ---
 
